@@ -18,7 +18,7 @@ const Resetpas = () => {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.BACKEND_URL}/reset-password`,
+        `${import.meta.env.VITE_BACKEND_URL}/reset-password`,
         {
           email: data.email,
           otp: data.otp,

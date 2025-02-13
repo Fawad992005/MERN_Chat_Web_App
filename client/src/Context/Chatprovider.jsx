@@ -16,7 +16,7 @@ export const Chatprovider = ({ children }) => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `${import.meta.env.BACKEND_URL}/currentuser`,
+          `${import.meta.env.VITE_BACKEND_URL}/currentuser`,
           {
             withCredentials: true,
           }

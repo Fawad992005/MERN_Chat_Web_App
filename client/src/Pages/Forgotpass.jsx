@@ -19,7 +19,7 @@ const Forgotpass = () => {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.BACKEND_URL}:3000/forgot-password`,
+        `${import.meta.env.VITE_BACKEND_URL}:3000/forgot-password`,
         { email: data.email }
       );
       console.log(response);
