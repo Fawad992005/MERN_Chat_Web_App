@@ -18,7 +18,7 @@ const Resetpas = () => {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/reset-password",
+        `${import.meta.env.BACKEND_URL}/reset-password`,
         {
           email: data.email,
           otp: data.otp,
@@ -34,7 +34,11 @@ const Resetpas = () => {
       }
     } catch (error) {
       console.error(error);
-      if (error.response && error.response.data && error.response.data.message) {
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
         alert(error.response.data.message);
       } else {
         alert("An error occurred while resetting the password.");

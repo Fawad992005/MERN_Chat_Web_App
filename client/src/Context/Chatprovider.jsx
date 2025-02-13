@@ -15,9 +15,12 @@ export const Chatprovider = ({ children }) => {
     const fetchUser = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:3000/currentuser", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          `${import.meta.env.BACKEND_URL}/currentuser`,
+          {
+            withCredentials: true,
+          }
+        );
 
         if (response.data.user) {
           setUser(response.data.user);
