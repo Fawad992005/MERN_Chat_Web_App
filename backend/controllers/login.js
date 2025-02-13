@@ -34,6 +34,7 @@ router.post("/", async (req, res) => {
       httpOnly: true,
       maxAge: 3600000,
       secure: true,
+      sameSite: "None",
     });
     res.json({
       message: "successful",
